@@ -1,0 +1,13 @@
+*.py
+*.xlsx
+*.js.bak
+Dati/
+.DS_Store
+Thumbs.db
+*.bat
+test_write.txt
+index_OLD.html
+script_OLD.js
+indexNEW.html
+scriptNEW.js
+# Escludi file di sistema e script temporanei
