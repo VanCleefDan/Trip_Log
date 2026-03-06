@@ -3643,11 +3643,11 @@ function renderTrips() {
         card.classList.add('trip-card');
         card.style.animationDelay = `${Math.min(index * 0.05, 1)}s`; 
         
-        const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? '../' + trip.image : '../placeholder.png';
+        const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
 
         card.innerHTML = `
             <div class="card-img-wrapper">
-                <img src="${imgPath}" onerror="this.src='../placeholder.png'" alt="${trip.destination}" class="card-image">
+                <img src="${imgPath}" onerror="this.src='./placeholder.png'" alt="${trip.destination}" class="card-image">
             </div>
             <div class="card-content">
                 <span class="card-date">${formatDate(trip.date)}</span>
@@ -3663,9 +3663,9 @@ function renderTrips() {
 
 // Open Modal
 function openModal(trip) {
-    const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? '../' + trip.image : '../placeholder.png';
+    const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
     modalImg.src = imgPath;
-    modalImg.onerror = function() { this.src = '../placeholder.png'; };
+    modalImg.onerror = function() { this.src = './placeholder.png'; };
     
     modalTitle.textContent = trip.destination;
     modalDate.textContent = formatDate(trip.date);
