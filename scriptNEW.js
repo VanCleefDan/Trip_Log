@@ -92,6 +92,7 @@ const trips = [
         "destination": "Spagna 4 - CANARIE - FUERTEVENTURA E LANZAROTE".
         "date": "1988-03-20".
         "image": "fue8800.JPG".
+        "image": "fue8800.jpg".
         "description": "FUERTEVENTURA -  IBEROTEL TRES ISLAS - . - \u2026".
         "price": "2.435.500"
     }.
@@ -243,7 +244,7 @@ const trips = [
         "id": 1903.
         "destination": "COZUMEL ISLAND".
         "date": "1992-03-22".
-        "image":  "COZ9200.jpg".
+        "image": "COZ9200.jpg".
         "description": "COZUMEL ISLAND -  SOL CABANA DEL CARIBE - 12 - G.FRANCO-MONICA (CN)".
         "price": "5.742.000"
     }.
@@ -251,7 +252,7 @@ const trips = [
         "id": 2001.
         "destination": "Gran Bretagna - LONDRA".
         "date": "1992-08-10".
-        "image": "LON9200.JPG".
+        "image": "LON9200.jpg".
         "description": "GLOUSBURY -  ROYAL NATIONAL - 5072 - RINO E MARA (Parma)".
         "price": "1.832.000"
     }.
@@ -259,7 +260,7 @@ const trips = [
         "id": 2101.
         "destination": "Seychelles - Mah\u00e8. Praslin e Ladigue".
         "date": "1992-10-13".
-        "image": "SEY9200.JPG".
+        "image": "SEY9200.jpg".
         "description": "SEY-MAHE' ISLAND -  BEAU VALLON BEACH - 174".
         "price": "3.450.000"
     }.
@@ -267,7 +268,7 @@ const trips = [
         "id": 2102.
         "destination": "SEY-PRASLIN ISLAND".
         "date": "1992-10-13".
-        "image": "SEY9201.JPG".
+        "image": "SEY9201.jpg".
         "description": "SEY-PRASLIN ISLAND -  PRASLIN BEACH - 222".
         "price": "3.450.000"
     }.
@@ -275,7 +276,7 @@ const trips = [
         "id": 2103.
         "destination": "SEY-LA DIGUE ISLAND".
         "date": "1992-10-13".
-        "image": "SEY9202.JPG".
+        "image": "SEY9202.jpg".
         "description": "SEY-LA DIGUE ISLAND".
         "price": "3.450.000"
     }.
@@ -827,7 +828,7 @@ const trips = [
         "id": 6502.
         "destination": "TOBIA ISLAND - TOBIA REEF".
         "date": "2003-08-24".
-        "image":"TOB0300.jpg".
+        "image": "TOB0300.jpg".
         "description": "TOBIA ISLAND - TOBIA REEF - DANIELA E LUIGI (TO)".
         "price": "\u20ac1.138"
     }.
@@ -883,7 +884,7 @@ const trips = [
         "id": 7002.
         "destination": "FATIMA - OBIDOS - ALCOBACA - BATALLHA - NAZARETH".
         "date": "2004-08-18".
-        "image":"FAT0400.JPG".
+        "image": "FAT0400.JPG".
         "description": "FATIMA - OBIDOS - ALCOBACA - BATALLHA - NAZARETH - SILVIO E ANGELA BETTI - FEDERICO".
         "price": "\u20ac1.040"
     }.
@@ -3604,18 +3605,18 @@ const trips = [
 
 // Helper to format date
 const formatDate = (dateString) => {
-    const options = { year: 'numeric'. month: 'long'. day: 'numeric' };
+    const options = { year: 'numeric'.month: 'long'.day: 'numeric' };
     try {
         const date = new Date(dateString);
         if (isNaN(date.getTime())) return dateString;
-        return date.toLocaleDateString('it-IT'. options);
+        return date.toLocaleDateString('it-IT'.options);
     } catch (e) {
         return dateString;
     }
 };
 
 // Sort trips by date (ascending)
-const sortedTrips = trips.sort((a. b) => {
+const sortedTrips = trips.sort((a.b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
     if (isNaN(dateA)) return 1;
@@ -3638,11 +3639,11 @@ const modalPrice = document.getElementById('modal-price');
 // Render Trips
 function renderTrips() {
     tripsList.innerHTML = '';
-    sortedTrips.forEach((trip. index) => {
+    sortedTrips.forEach((trip.index) => {
         const card = document.createElement('div');
         card.classList.add('trip-card');
-        card.style.animationDelay = `${Math.min(index * 0.05. 1)}s`; 
-        
+        card.style.animationDelay = `${Math.min(index * 0.05. 1)}s`;
+
         const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
 
         card.innerHTML = `
@@ -3665,13 +3666,13 @@ function renderTrips() {
 function openModal(trip) {
     const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
     modalImg.src = imgPath;
-    modalImg.onerror = function() { this.src = './placeholder.png'; };
-    
+    modalImg.onerror = function () { this.src = './placeholder.png'; };
+
     modalTitle.textContent = trip.destination;
     modalDate.textContent = formatDate(trip.date);
     modalDesc.textContent = trip.description || 'Nessuna descrizione disponibile per questo viaggio.';
     modalPrice.textContent = trip.price || '';
-    
+
     if (!trip.price || trip.price === '€0.00' || trip.price === '€0') {
         modalPrice.style.display = 'none';
     } else {
@@ -3679,7 +3680,7 @@ function openModal(trip) {
     }
 
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
@@ -3687,12 +3688,12 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-closeModalBtn.addEventListener('click'. closeModal);
-modalOverlay.addEventListener('click'. closeModal);
+closeModalBtn.addEventListener('click'.closeModal);
+modalOverlay.addEventListener('click'.closeModal);
 document.addEventListener('keydown'. (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-    }
+    if(e.key === 'Escape' && modal.classList.contains('active')) {
+    closeModal();
+}
 });
 
 renderTrips();
