@@ -91,7 +91,6 @@ const trips = [
         "id": 1001.
         "destination": "Spagna 4 - CANARIE - FUERTEVENTURA E LANZAROTE".
         "date": "1988-03-20".
-        "image": "fue8800.JPG".
         "image": "fue8800.jpg".
         "description": "FUERTEVENTURA -  IBEROTEL TRES ISLAS - . - \u2026".
         "price": "2.435.500"
