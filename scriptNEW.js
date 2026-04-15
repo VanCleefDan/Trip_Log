@@ -864,7 +864,7 @@ const trips = [
         "price": "\u20ac32.80"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 6802.
         "destination": "CERVIA".
         "date": "2004-06-24".
@@ -1138,7 +1138,7 @@ const trips = [
         "price": "\u20ac3.655"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 9501.
         "destination": "Italia - CESENATICO 1".
         "date": "2007-04-28".
@@ -1322,7 +1322,7 @@ const trips = [
         "price": "\u20ac0"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 9701.
         "destination": "Italia - VERONA\nEurobank di Ping-Pong".
         "date": "2007-05-11".
@@ -1586,13 +1586,13 @@ const trips = [
         "price": "\u20ac1.120"
     }.
     {
-<<<<<<< Updated upstream
         "id": 10301.
         "destination": "Italia - BOLOGNA \nCorso Iban Sepa".
         "date": "2008-01-28".
         "image": "BOL0800.bmp".
-        "description": "BOLOGNA -  STARHOTEL EXCELSIOR - 314 - Colleghi Specialisti + Paola Corso".
-=======
+        "description": "BOLOGNA -  STARHOTEL EXCELSIOR - 314 - Colleghi Specialisti + Paola Corso"
+    }.
+    {
         "id": 4601,
         "destination": "Mauritius",
         "date": "1998-10-19",
@@ -2146,7 +2146,7 @@ const trips = [
         "price": "\u20ac0"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 13202.
         "destination": "Gabicce Mare".
         "date": "2011-08-16".
@@ -2394,7 +2394,7 @@ const trips = [
         "price": "\u20ac30"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 13501.
         "destination": "Madagascar 2 - NOSY BE".
         "date": "2011-10-31".
@@ -2578,7 +2578,7 @@ const trips = [
         "price": "\u20ac0"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 14402.
         "destination": "Udienza Papale in Piazza San Pietro".
         "date": "2013-11-17".
@@ -2602,7 +2602,7 @@ const trips = [
         "price": "\u20ac0"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 14501.
         "destination": "Tanzania - ZANZIBAR 2".
         "date": "2014-02-18".
@@ -2668,7 +2668,7 @@ const trips = [
         "price": "\u20ac156"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 14602.
         "destination": "GARDALAND hotel and Resort".
         "date": "2014-04-04".
@@ -2702,7 +2702,7 @@ const trips = [
         "price": "\u20ac0"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 14801.
         "destination": "Italia - LOANO  3 (SV)".
         "date": "2014-05-22".
@@ -2728,7 +2728,6 @@ const trips = [
         "price": "\u20ac390.62"
     }.
     {
-<<<<<<< Updated upstream
         "id": 15001.
         "destination": "Italia - LOANO  4 (SV)".
         "date": "2014-06-21".
@@ -2736,15 +2735,14 @@ const trips = [
         "description": "LOANO -  loano 2 village - U 419".
         "price": "\u20ac330"
     }.
-=======
+    {
         "id": 10502,
         "destination": "PORTOFINO",
         "date": "2008-04-06",
         "image": "POR0800.JPG",
-        "description": "PORTOFINO - Visti:  PIersilvio Berlusca e Silvia Toffanin",
+        "description": "PORTOFINO - Visti:  PIersilvio Berlusca e Silvia Toff",
         "price": "\u20ac78,00"
     },
->>>>>>> Stashed changes
     {
         "id": 15101.
         "destination": "Italia - MARISPICA (RG)".
@@ -2754,7 +2752,7 @@ const trips = [
         "price": "\u20ac2.250"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 15102.
         "destination": "Ragusa Ibla (RG)".
         "date": "2014-07-12".
@@ -2820,7 +2818,7 @@ const trips = [
         "price": "\u20ac120"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 15301.
         "destination": "Grecia  5 - MYKONOS".
         "date": "2014-09-19".
@@ -2934,7 +2932,7 @@ const trips = [
         "price": "\u20ac864"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 15703.
         "destination": "Valletta".
         "date": "2015-05-30".
@@ -2968,7 +2966,7 @@ const trips = [
         "price": "\u20ac1.700"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 15902.
         "destination": "SERGEV POSAD".
         "date": "2015-07-17".
@@ -3384,7 +3382,7 @@ const trips = [
         "price": "\u20ac2.200"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 17201.
         "destination": "Italia - FORLI'".
         "date": "2016-09-14".
@@ -3410,7 +3408,7 @@ const trips = [
         "price": "\u20ac64"
     }.
     {
-<<<<<<< Updated upstream
+"
         "id": 17203.
         "destination": "CASTEL GUELFO (BO)".
         "date": "2016-09-14".
@@ -3458,7 +3456,6 @@ const trips = [
         "description": "FIORDI OMANITI - LELLA E MARTINO Chiavari",
         "price": "\u20ac2,712,27"
     },
->>>>>>> Stashed changes
     {
         "id": 17303.
         "destination": "NEGRIL".
@@ -3476,13 +3473,13 @@ const trips = [
         "price": "\u20ac5.058"
     }.
     {
-<<<<<<< Updated upstream
         "id": 17401.
         "destination": "Italia - PORTO VENERE".
         "date": "1990-07-03".
         "image": "PortoVenere.jpg".
         "description": "Porto Venere in barca -  barca - Gruppo BariSub gamba ingessata".
-=======
+}.
+    {
         "id": 12201,
         "destination": "Italia - CASTROCARO TERME (FC)",
         "date": "2010-04-08",
@@ -4226,7 +4223,7 @@ const trips = [
         "image": "SAN2000.JPG".
         "description": "SANDIGLIANO -  SANTO STEFANO SPA RELAIS - 118 - regalo dei  miei colleghi 10".
         "price": "\u20ac0"
-<<<<<<< Updated upstream
+"
     }.
     {
         "id": 20201.
@@ -5874,7 +5871,7 @@ const trips = [
         "destination": "ISRAELE - Tour classico",
         "date": "2018-10-09",
         "image": "TEL1800.JPG",
-        "description": "TEL AVIV -  TAL by the beach - 305 - Luciana Malatesta - Silvia Cuniberti 1 EUR = 4,2070 ILS",
+        "description": "TEL AVIV -  TAL by the beach - 305 - Luciana Malasta - Silvia Cuni 1 EUR = 4,2070 ILS",
         "price": "\u20ac2,760,00"
     },
     {
