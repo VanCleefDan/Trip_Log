@@ -3598,6 +3598,70 @@ const trips = [
         "image": "HAR2500.jpg",
         "description": "HARLEM - giorno 5 - gruppo di Bg Bs e Cristina di  La Spezia",
         "price": "\u20ac3,870,00"
+    },
+    {
+        "id": 23007,
+        "destination": "URGENCH",
+        "date": "2026-09-19",
+        "image": "URGENCH.jpg",
+        "description": "URGENCH - Gruppo di BG Oliviero e Carmen e Alessandro- giorno 1",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23008,
+        "destination": "KHIVA",
+        "date": "2026-09-19",
+        "image": "KHIVA.jpg",
+        "description": "KHIVA -  Isakhoja Boutique Hotel - 106 piano terra - giorno 1",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23009,
+        "destination": "URGENCH > BUKHARA",
+        "date": "2026-09-20",
+        "image": "URGENCH_AIPORT.jpg",
+        "description": "URGENCH > BUKHARA volo HY52- 14 C - 8 E - giorno 3",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23010,
+        "destination": "BUKHARA",
+        "date": "2026-09-21",
+        "image": "BUKHARA.jpg",
+        "description": "BUKHARA - ANOR -117 - CHINOR/OLD BUKHARA pranzo giorno 3-4",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23011,
+        "destination": "GIJDUVON",
+        "date": "2026-09-22",
+        "image": "GIJDUVON.jpg",
+        "description": "GIJDUVON -  Fabbrica CERAMICHE pranzo in famiglia - giorno 5",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23012,
+        "destination": "SAMARQAND",
+        "date": "2026-09-23",
+        "image": "SAMARQAND.jpg",
+        "description": "SAMARQAND -GRAND PLAZA- 315 Restaurant Registon/KHAN Htl giorno 6",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23013,
+        "destination": "SAMARQAND > TASHKENT",
+        "date": "2026-09-24",
+        "image": "treno_UZB.jpg",
+        "description": "SAMARQAND>TASHKENT treno -Carrozza 5 posti 1 e 2- giorno 7",
+        "price": "\u20ac4,360,00"
+    },
+    {
+        "id": 23014,
+        "destination": "TASHKENT La capitale",
+        "date": "2026-09-25",
+        "image": "metroTAS.jpg",
+        "description": "TASHKENT -ATECA Hotel Suite - 307 - giorno 8",
+        "price": "\u20ac4,360,00"
     }
 ];
 
@@ -3643,11 +3707,11 @@ function renderTrips() {
         card.classList.add('trip-card');
         card.style.animationDelay = `${Math.min(index * 0.05, 1)}s`; 
         
-        const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
+        const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? '../' + trip.image : '../placeholder.png';
 
         card.innerHTML = `
             <div class="card-img-wrapper">
-                <img src="${imgPath}" onerror="this.src='./placeholder.png'" alt="${trip.destination}" class="card-image">
+                <img src="${imgPath}" onerror="this.src='../placeholder.png'" alt="${trip.destination}" class="card-image">
             </div>
             <div class="card-content">
                 <span class="card-date">${formatDate(trip.date)}</span>
@@ -3663,9 +3727,9 @@ function renderTrips() {
 
 // Open Modal
 function openModal(trip) {
-    const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
+    const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? '../' + trip.image : '../placeholder.png';
     modalImg.src = imgPath;
-    modalImg.onerror = function() { this.src = './placeholder.png'; };
+    modalImg.onerror = function() { this.src = '../placeholder.png'; };
     
     modalTitle.textContent = trip.destination;
     modalDate.textContent = formatDate(trip.date);
