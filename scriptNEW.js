@@ -3678,13 +3678,22 @@ const formatDate = (dateString) => {
     }
 };
 
-// Sort trips by date (ascending)
-const sortedTrips = trips.sort((a, b) => {
+// Helper to extract year from date
+const getTripYear = (dateString) => {
+    if (!dateString) return null;
+    const match = String(dateString).match(/^(\d{4})/);
+    if (match) return parseInt(match[1], 10);
+    const date = new Date(dateString);
+    return isNaN(date.getFullYear()) ? null : date.getFullYear();
+};
+
+// Sort trips by date (descending: più recenti prima)
+const sortedTrips = trips.slice().sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
     if (isNaN(dateA)) return 1;
     if (isNaN(dateB)) return -1;
-    return dateA - dateB;
+    return dateB - dateA;
 });
 
 const tripsList = document.getElementById('trips-list');
@@ -3702,10 +3711,24 @@ const modalPrice = document.getElementById('modal-price');
 // Render Trips
 function renderTrips() {
     tripsList.innerHTML = '';
+    let lastYear = null;
+
     sortedTrips.forEach((trip, index) => {
+        const tripYear = getTripYear(trip.date);
+
+        // Inserisci intestazione dell'anno se cambia l'anno
+        if (tripYear && tripYear !== lastYear) {
+            const yearDivider = document.createElement('div');
+            yearDivider.classList.add('year-divider');
+            yearDivider.id = `year-${tripYear}`;
+            yearDivider.innerHTML = `<h2>${tripYear}</h2>`;
+            tripsList.appendChild(yearDivider);
+            lastYear = tripYear;
+        }
+
         const card = document.createElement('div');
         card.classList.add('trip-card');
-        card.style.animationDelay = `${Math.min(index * 0.05, 1)}s`; 
+        card.style.animationDelay = `${Math.min(index * 0.03, 1)}s`; 
         
         const imgPath = trip.image && trip.image !== 'None' && trip.image !== '' ? './' + trip.image : './placeholder.png';
 
@@ -3723,6 +3746,48 @@ function renderTrips() {
         card.addEventListener('click', () => openModal(trip));
         tripsList.appendChild(card);
     });
+}
+
+// Popola il menu a tendina degli anni e gestisce il salto all'anno
+function populateYearSelect() {
+    const yearSelect = document.getElementById('year-select');
+    if (!yearSelect) return;
+
+    const years = [];
+    sortedTrips.forEach(trip => {
+        const y = getTripYear(trip.date);
+        if (y && !years.includes(y)) {
+            years.push(y);
+        }
+    });
+
+    yearSelect.innerHTML = '<option value="">Seleziona un anno...</option>';
+    years.forEach(year => {
+        const opt = document.createElement('option');
+        opt.value = year;
+        opt.textContent = year;
+        yearSelect.appendChild(opt);
+    });
+
+    yearSelect.addEventListener('change', (e) => {
+        jumpToYear(e.target.value);
+    });
+
+    const jumpBtn = document.getElementById('jump-btn');
+    if (jumpBtn) {
+        jumpBtn.addEventListener('click', () => {
+            jumpToYear(yearSelect.value);
+        });
+    }
+}
+
+// Salta all'anno selezionato con scorrimento fluido
+function jumpToYear(year) {
+    if (!year) return;
+    const target = document.getElementById(`year-${year}`);
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // Open Modal
@@ -3759,4 +3824,21 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Gestione pulsante Torna su
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Avvio
 renderTrips();
+populateYearSelect();
